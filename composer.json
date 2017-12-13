@@ -1,0 +1,22 @@
+{
+	"author"	: [
+		{	
+			"name" : "Aung Thet Win"
+		}
+	],
+	"license": "MIT",
+	"require" : {
+		"php-activerecord/php-activerecord" : "dev-master",
+		"components/jquery" : "v3.2.1",
+		"twbs/bootstrap"	: "v3.3.7"
+	},
+	"script" : {
+		"post-install-cmd" : [
+			"mkdir 'view/fonts"
+		]
+	},
+	"autoload" : {
+		"classmap" : ["src/"],
+		"psr-4" : { "App\\" : "src/"}
+	}
+}
