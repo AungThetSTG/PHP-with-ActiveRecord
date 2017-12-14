@@ -1,9 +1,10 @@
 <?php
- require "config/config.php";
- require_once "vendor/php-activerecord/php-activerecord/ActiveRecord.php";
+$dir = dirname(__FILE__).DIRECTORY_SEPARATOR;
+ require $dir . '../../config/config.php';
+ require_once $dir . "../../vendor/php-activerecord/php-activerecord/ActiveRecord.php";
 
- ActiveRecord\Config::initialize(function($cfg) use($config){
-     $cfg->set_model_directory('src/models');
+ ActiveRecord\Config::initialize(function($cfg) use($config, $dir){
+     $cfg->set_model_directory($dir . '../../src/models');
      $cfg->set_connections(array(
          'development' => 'mysql://'.
                             $config['DB_USERNAME'].

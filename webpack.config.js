@@ -1,7 +1,13 @@
+    const path = require('path');    
+    
     module.exports = {
-        entry : "./vendor/components/jquery/jquery.min.js",
+        entry : {
+            jquery      : "./vendor/components/jquery/jquery.min.js",
+            bootstrap   : "./vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
+        },
         output : {
-            "filename" : "./view/js/bundle.js"
+            path: path.resolve(__dirname, 'view/js'),
+            filename : "[name].js"
         },
         module : {
             rules : [
